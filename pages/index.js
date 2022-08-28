@@ -6,6 +6,7 @@ export default function Home() {
   const [sort, setSort] = useState(null);
   const [beds, setBeds] = useState(null);
   const [response, setResponse] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const getProperties = async () => {
     try {
@@ -18,7 +19,7 @@ export default function Home() {
         params: { city, state_code, sort, beds },
       });
       const { data } = res;
-      console.log(data);
+      //console.log(data);
       setResponse(data.listings);
     } catch (err) {
       console.error(err);
@@ -92,6 +93,47 @@ export default function Home() {
           Search
         </button>
       </form>
+      {response && (
+        <main className="mt-10">
+          <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols2 lg:grid-cols-3">
+            {response.map((property) => (
+              <div key={property.property_id} className="pt-6">
+                <div className="flow-root bg-light rounded-lg px-4 pb-8">
+                  <div className="-mt-6">
+                    <div className="flex items-center justify-center">
+                      <span className="p-2">
+                        <img
+                          src={property.photo}
+                          alt=""
+                          className="w-full h-full rounded-lg"
+                        />
+                      </span>
+                    </div>
+                    <div className="text-center justify-center items-center">
+                      <h3 className="mt-4 text-lg font-bold w-full break-words overflow-x-auto text-active tracking-tight">
+                        {property.short_price}
+                        {property.prop_type}
+                      </h3>
+                      <span className="mt-2 text-sm font-bold text-primary block">
+                        {property.beds} Bed -{property.baths_full} Bath
+                      </span>
+                      <span className="mt-2 text-sm text-secondary block">
+                        {property.address}
+                      </span>
+                      <a
+                        href={property.rdc_web_url}
+                        className="mt-4 text-active text-sm block"
+                      >
+                        Details
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </main>
+      )}
     </div>
   );
 }
