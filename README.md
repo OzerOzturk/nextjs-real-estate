@@ -1,3 +1,46 @@
+# Home Finder 🏠
+
+With Home Finder, you can find your next home. I used Realty API for this project and it shows us properties that are available for sale in the United States. When searching for your next home, you can sort by newness, price, and height.
+
+
+## Screenshot
+
+![cover-image](https://user-images.githubusercontent.com/60944453/188264297-ffde78e2-abdd-44b7-9ef1-33d51b3df38b.png)
+
+
+<br>
+
+## Tech Stack
+- Next.js
+- TailwindCSS
+- [Realty API](https://rapidapi.com/apidojo/api/realty-in-us/) 
+- Responsive Design
+
+
+<br>
+
+## How to run this app on your local machine?
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/OzerOzturk/nextjs-real-estate.git
+   ```
+2. Navigate to the project folder
+
+   ```sh
+   cd nextjs-real-estate
+   ```
+
+3. Install dependencies
+   ```sh
+   npm install
+   ```
+4. Run the project
+   ```sh
+   npm run dev
+   ```
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
