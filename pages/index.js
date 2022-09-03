@@ -27,13 +27,21 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col md:px-12 px-0 relative bg-background font-poppins items-center min-h-screen">
-      <h1 className="text-6xl text-primary font-bold mt-20">Home Finder</h1>
-      <h2 className="text-active text-2xl mt-6">
-        Discover & Find latest properties for sale anywhere in USA.
-      </h2>
+    <div className="flex flex-col px-0 relative bg-background font-poppins items-center min-h-screen">
+      <img
+        src="https://images.unsplash.com/photo-1567018548889-6d7f0eaff046?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1987&q=80"
+        alt=""
+        className="relative"
+      />
+      <section className="absolute mt-20">
+        <h1 className="text-6xl text-primary font-bold mt-20  ">Home Finder</h1>
+        <h2 className="text-primary text-2xl mt-6">
+          Discover & Find latest properties for sale anywhere in USA.
+        </h2>
+      </section>
+
       <form
-        className="sm:mx-auto mt-20 md:max-w-4xl justify-center flex flex-col sm:w-full sm:flex"
+        className="sm:mx-auto mt-5 md:max-w-4xl justify-center flex flex-col sm:w-full sm:flex"
         onSubmit={(e) => {
           getProperties();
           e.preventDefault();
@@ -93,6 +101,7 @@ export default function Home() {
           Search
         </button>
       </form>
+
       {response && (
         <main className="mt-10">
           <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols2 lg:grid-cols-3">
