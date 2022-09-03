@@ -35,7 +35,10 @@ With Home Finder, you can find your next home. I used Realty API for this projec
    ```sh
    npm install
    ```
-4. Run the project
+4. Get an API key from  [Rapid API](https://rapidapi.com/apidojo/api/realty-in-us/) and set your API key environment variable (.env.local)
+   ```sh
+   NEXT_PUBLIC_API_KEY = your_api_key
+5. Run the project
    ```sh
    npm run dev
    ```
